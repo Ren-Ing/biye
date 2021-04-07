@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TestController {
     @RequestMapping("login")
     public String login(){
-        return "hello";
+        return "menu";
     }
 
     @RequestMapping("register")
     public String register(){
         return "login";
     }
+
 }
