@@ -1,14 +1,17 @@
 package com.huang.bishe.serviceImpl;
 
 import com.huang.bishe.jpa.UserRepository;
-import com.huang.bishe.service.SysUserservice;
+import com.huang.bishe.service.SysUserService;
 import com.huang.bishe.entity.SysUserEntity;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+
+import javax.annotation.Resource;
 import java.util.Optional;
 
-public class SysUserserviceImpl implements SysUserservice {
-    @Autowired
+@Service
+public class SysUserServiceImpl implements SysUserService {
+    @Resource
     private UserRepository userRepository;
     @Override
     public SysUserEntity findById(Integer id) {
@@ -35,7 +38,7 @@ public class SysUserserviceImpl implements SysUserservice {
     }
 
     @Override
-    public void deleteByid(Integer id) {
+    public void deleteById(Integer id) {
         userRepository.deleteById(id);
     }
 }

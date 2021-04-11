@@ -1,8 +1,11 @@
 package com.huang.bishe.entity;
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 import java.util.Objects;
 
+//@Proxy(lazy = false)
 @Entity
 @Table(name = "sys_user", schema = "wms", catalog = "")
 public class SysUserEntity {
