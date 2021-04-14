@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "sys_post", schema = "wms", catalog = "")
-public class SysPostEntity {
+@Table(name = "post", schema = "wms", catalog = "")
+public class PostEntity {
     private int postId;
     private String postName;
     private int postSort;
@@ -44,7 +44,7 @@ public class SysPostEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SysPostEntity that = (SysPostEntity) o;
+        PostEntity that = (PostEntity) o;
         return postId == that.postId && postSort == that.postSort && Objects.equals(postName, that.postName);
     }
 

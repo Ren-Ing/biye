@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "sys_dept", schema = "wms", catalog = "")
-public class SysDeptEntity {
+@Table(name = "dept", schema = "wms", catalog = "")
+public class DeptEntity {
     private int deptId;
     private Integer parentId;
     private String ancestors;
@@ -88,7 +88,7 @@ public class SysDeptEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SysDeptEntity that = (SysDeptEntity) o;
+        DeptEntity that = (DeptEntity) o;
         return deptId == that.deptId && Objects.equals(parentId, that.parentId) && Objects.equals(ancestors, that.ancestors) && Objects.equals(deptName, that.deptName) && Objects.equals(orderNum, that.orderNum) && Objects.equals(leader, that.leader) && Objects.equals(phone, that.phone);
     }
 

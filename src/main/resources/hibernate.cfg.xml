@@ -11,12 +11,13 @@
         <property name="connection.password">admin123</property>
         <mapping class="com.huang.bishe.entity.CustomerEntity"/>
         <mapping class="com.huang.bishe.entity.SupplierEntity"/>
-        <mapping class="com.huang.bishe.entity.SysDeptEntity"/>
-        <mapping class="com.huang.bishe.entity.SysGoodsEntity"/>
-        <mapping class="com.huang.bishe.entity.SysPostEntity"/>
-        <mapping class="com.huang.bishe.entity.SysStoreEntity"/>
-        <mapping class="com.huang.bishe.entity.SysUserPostEntity"/>
-        <mapping class="com.huang.bishe.entity.SysUserEntity"/>
+        <mapping class="com.huang.bishe.entity.DeptEntity"/>
+        <mapping class="com.huang.bishe.entity.GoodsEntity"/>
+        <mapping class="com.huang.bishe.entity.UserRoleEntity"/>
+        <mapping class="com.huang.bishe.entity.PostEntity"/>
+        <mapping class="com.huang.bishe.entity.StoreEntity"/>
+        <mapping class="com.huang.bishe.entity.UserPostEntity"/>
+        <mapping class="com.huang.bishe.entity.UserEntity"/>
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->

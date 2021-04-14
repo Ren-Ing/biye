@@ -4,9 +4,8 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "sys_goods", schema = "wms", catalog = "")
-@IdClass(SysGoodsEntityPK.class)
-public class SysGoodsEntity {
+@Table(name = "goods", schema = "wms", catalog = "")
+public class GoodsEntity {
     private int goodsId;
     private String goodsName;
     private Integer goodsNum;
@@ -22,7 +21,7 @@ public class SysGoodsEntity {
         this.goodsId = goodsId;
     }
 
-    @Id
+    @Basic
     @Column(name = "goods_name")
     public String getGoodsName() {
         return goodsName;
@@ -56,7 +55,7 @@ public class SysGoodsEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SysGoodsEntity that = (SysGoodsEntity) o;
+        GoodsEntity that = (GoodsEntity) o;
         return goodsId == that.goodsId && Objects.equals(goodsName, that.goodsName) && Objects.equals(goodsNum, that.goodsNum) && Objects.equals(storeId, that.storeId);
     }
 

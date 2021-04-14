@@ -1,17 +1,16 @@
 package com.huang.bishe.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Objects;
 
-@Entity
-@Table(name = "sys_user_post", schema = "wms", catalog = "")
-@IdClass(SysUserPostEntityPK.class)
-public class SysUserPostEntity {
+public class UserPostEntityPK implements Serializable {
     private int userId;
     private int postId;
 
-    @Id
     @Column(name = "user_id")
+    @Id
     public int getUserId() {
         return userId;
     }
@@ -20,8 +19,8 @@ public class SysUserPostEntity {
         this.userId = userId;
     }
 
-    @Id
     @Column(name = "post_id")
+    @Id
     public int getPostId() {
         return postId;
     }
@@ -34,7 +33,7 @@ public class SysUserPostEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SysUserPostEntity that = (SysUserPostEntity) o;
+        UserPostEntityPK that = (UserPostEntityPK) o;
         return userId == that.userId && postId == that.postId;
     }
 

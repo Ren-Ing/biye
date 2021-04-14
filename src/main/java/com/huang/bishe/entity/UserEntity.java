@@ -1,18 +1,15 @@
 package com.huang.bishe.entity;
 
-import org.hibernate.annotations.Proxy;
-
 import javax.persistence.*;
 import java.util.Objects;
 
-//@Proxy(lazy = false)
 @Entity
-@Table(name = "sys_user", schema = "wms", catalog = "")
-public class SysUserEntity {
-    private int id;
+@Table(name = "user", schema = "wms", catalog = "")
+public class UserEntity {
+    private String id;
     private String username;
     private String password;
-    private int role;
+    private String role;
     private String email;
     private String sex;
     private String avatar;
@@ -20,11 +17,11 @@ public class SysUserEntity {
 
     @Id
     @Column(name = "id")
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -50,11 +47,11 @@ public class SysUserEntity {
 
     @Basic
     @Column(name = "role")
-    public int getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(int role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
@@ -102,8 +99,8 @@ public class SysUserEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SysUserEntity that = (SysUserEntity) o;
-        return id == that.id && role == that.role && Objects.equals(username, that.username) && Objects.equals(password, that.password) && Objects.equals(email, that.email) && Objects.equals(sex, that.sex) && Objects.equals(avatar, that.avatar) && Objects.equals(tel, that.tel);
+        UserEntity that = (UserEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(username, that.username) && Objects.equals(password, that.password) && Objects.equals(role, that.role) && Objects.equals(email, that.email) && Objects.equals(sex, that.sex) && Objects.equals(avatar, that.avatar) && Objects.equals(tel, that.tel);
     }
 
     @Override

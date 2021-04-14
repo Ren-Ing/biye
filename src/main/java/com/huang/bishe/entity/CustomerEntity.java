@@ -8,9 +8,9 @@ import java.util.Objects;
 public class CustomerEntity {
     private int customerId;
     private String customerName;
-    private Integer goodsId;
-    private Integer goodsNum;
-    private String customerTel;
+    private Byte customerType;
+    private String address;
+    private String phonenum;
 
     @Id
     @Column(name = "customer_id")
@@ -33,33 +33,33 @@ public class CustomerEntity {
     }
 
     @Basic
-    @Column(name = "goods_id")
-    public Integer getGoodsId() {
-        return goodsId;
+    @Column(name = "customer_type")
+    public Byte getCustomerType() {
+        return customerType;
     }
 
-    public void setGoodsId(Integer goodsId) {
-        this.goodsId = goodsId;
-    }
-
-    @Basic
-    @Column(name = "goods_num")
-    public Integer getGoodsNum() {
-        return goodsNum;
-    }
-
-    public void setGoodsNum(Integer goodsNum) {
-        this.goodsNum = goodsNum;
+    public void setCustomerType(Byte customerType) {
+        this.customerType = customerType;
     }
 
     @Basic
-    @Column(name = "customer_tel")
-    public String getCustomerTel() {
-        return customerTel;
+    @Column(name = "address")
+    public String getAddress() {
+        return address;
     }
 
-    public void setCustomerTel(String customerTel) {
-        this.customerTel = customerTel;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Basic
+    @Column(name = "phonenum")
+    public String getPhonenum() {
+        return phonenum;
+    }
+
+    public void setPhonenum(String phonenum) {
+        this.phonenum = phonenum;
     }
 
     @Override
@@ -67,11 +67,11 @@ public class CustomerEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CustomerEntity that = (CustomerEntity) o;
-        return customerId == that.customerId && Objects.equals(customerName, that.customerName) && Objects.equals(goodsId, that.goodsId) && Objects.equals(goodsNum, that.goodsNum) && Objects.equals(customerTel, that.customerTel);
+        return customerId == that.customerId && Objects.equals(customerName, that.customerName) && Objects.equals(customerType, that.customerType) && Objects.equals(address, that.address) && Objects.equals(phonenum, that.phonenum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, customerName, goodsId, goodsNum, customerTel);
+        return Objects.hash(customerId, customerName, customerType, address, phonenum);
     }
 }
